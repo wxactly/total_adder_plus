@@ -11,5 +11,24 @@ function total_adder_plus_menu() {
 }
 
 function total_adder_plus_form($form, &$form_state) {
+  $form['adder_term1'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Some number'),
+    '#size' => 10,
+    '#required' => true
+  );
+  
+  $form['adder_term2'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Another number'),
+    '#size' => 10,
+    '#required' => true
+  );
+  
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit')
+  );
+  
   return $form;
 }
