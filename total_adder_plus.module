@@ -1,1 +1,15 @@
 <?php
+
+function total_adder_plus_menu() {
+  $items['total_adder_plus'] = array(
+    'title' => 'Total Adder Plus',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('total_adder_plus_form'),
+    'access callback' => 'user_is_logged_in'
+  );
+  return $items;
+}
+
+function total_adder_plus_form($form, &$form_state) {
+  return $form;
+}
