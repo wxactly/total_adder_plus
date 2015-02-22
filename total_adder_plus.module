@@ -43,3 +43,21 @@ function total_adder_plus_form_submit($form_id, &$form_state) {
     '@total' => $term1 + $term2
   )));
 }
+
+function total_adder_plus_form_validate($form, &$form_state) {
+  $term1 = $form_state['values']['adder_term1'];
+  
+  if(!is_numeric($term1)) {
+    form_set_error('adder_term1', t('@title field must be a number.', array(
+      '@title' => $form['adder_term1']['#title']
+    )));
+  }
+  
+  $term2 = $form_state['values']['adder_term2'];
+  
+  if(!is_numeric($term2)) {
+    form_set_error('adder_term2', t('@title field must be a number.', array(
+      '@title' => $form['adder_term2']['#title']
+    )));
+  }
+}
