@@ -32,3 +32,14 @@ function total_adder_plus_form($form, &$form_state) {
   
   return $form;
 }
+
+function total_adder_plus_form_submit($form_id, &$form_state) {
+  $term1 = $form_state['values']['adder_term1'];
+  $term2 = $form_state['values']['adder_term2'];
+  
+  drupal_set_message(t('@term1 + @term2 = @total', array(
+    '@term1' => $term1,
+    '@term2' => $term2,
+    '@total' => $term1 + $term2
+  )));
+}
